@@ -1,0 +1,46 @@
+
+<!-- saved from url=(0033)http://faceflash.compugician.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script src="./faceflash.compugician.com_files/jquery.min.js"></script><style type="text/css"></style>
+</head>
+<body style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255);">
+<br>
+<br>
+<br>
+<table style="width:100%; height:90%;">
+<tbody><tr><td style="width:40%; text-align: center;">
+<img src="./faceflash.compugician.com_files/83.png" height="100%" id="leftFace">
+</td><td style="width:230px; text-align:center; font-size:90px;">
+<div id="plus"> + </div> 
+</td><td style="width:40%; text-align: center;">
+<img src="./faceflash.compugician.com_files/35.png" height="100%" id="rightFace">
+</td></tr>
+</tbody></table>
+
+<script language="javascript">
+var timerID = setInterval(function(){switchface();},1200);
+
+function switchface() {
+ numleft = Math.floor(Math.random()*90+2);
+ do {
+	 numright = Math.floor(Math.random()*90+2);
+    } while (numright==numleft)
+ $('#leftFace').attr("src",'images/'+(numleft)+'.png');
+ $('#rightFace').attr("src",'images/'+(numright)+'.png');
+ if (numleft>6) { numleft=1; }
+ if (numright>6) { numright=1; }
+}
+
+$(document).ready(function() {
+
+var numleft=1;
+var numright=1;
+	$("#plus").click(function(){alert("[ "+$('#leftFace').attr('src')+" : "+$('#rightFace').attr('src')+" ]")});
+
+});
+
+</script>
+
+
+
+</body></html>
